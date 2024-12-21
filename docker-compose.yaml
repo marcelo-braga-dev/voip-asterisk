@@ -1,0 +1,14 @@
+services:
+  asterisk:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: asterisk-container
+    ports:
+      - "${PORT_UDP:-5060}:5060/udp"
+      - "${PORT_TCP:-5061}:5061"
+      - "${PORT_RTC:-10000-10199}:10000-10199/udp"
+    volumes:
+      - ./logs:/var/log/asterisk
+    entrypoint: [ "/usr/local/bin/entrypoint.sh" ]
+    restart: 'no' # 'unless-stopped'
