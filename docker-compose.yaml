@@ -10,5 +10,7 @@ services:
       - "${PORT_RTC:-10000-10199}:10000-10199/udp"
     volumes:
       - ./logs:/var/log/asterisk
+      - ./storage/audio:/var/www/html/recordings
+      - ./asterisk-config/pjsip.conf:/etc/asterisk/pjsip.conf
     entrypoint: [ "/usr/local/bin/entrypoint.sh" ]
     restart: 'no' # 'unless-stopped'

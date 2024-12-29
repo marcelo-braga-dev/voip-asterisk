@@ -26,9 +26,19 @@ groupadd -r asterisk && useradd -r -g asterisk asterisk
 
 # Criar diretórios necessários
 echo "Verificando e criando diretórios necessários..."
-mkdir -p /var/lib/asterisk /var/log/asterisk /var/run/asterisk /var/spool/asterisk/outgoing
+mkdir -p /var/lib/asterisk /var/log/asterisk /var/run/asterisk /var/spool/asterisk/outgoing 
 chown -R asterisk:asterisk /var/lib/asterisk /var/log/asterisk /var/run/asterisk /etc/asterisk /var/spool/asterisk
 chmod -R 750 /var/lib/asterisk /var/log/asterisk /var/run/asterisk /etc/asterisk /var/spool/asterisk
+
+# diretorio de gravacao
+mkdir -p /var/www/html/recordings
+chmod -R 775 /var/www/html/recordings
+chown -R asterisk:asterisk /var/www/html/recordings
+
+# diretorio log
+mkdir -p /var/log/asterisk/cdr-csv
+chown -R asterisk:asterisk /var/log/asterisk
+chmod -R 755 /var/log/asterisk
 
 # Substituir variáveis de ambiente nos templates
 echo "Configurando arquivos do Asterisk..."
