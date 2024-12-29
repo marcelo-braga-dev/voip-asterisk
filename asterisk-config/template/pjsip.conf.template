@@ -1696,8 +1696,7 @@ contact_user=${SERVER_EXTERNAL_USER}
 [server_external_auth]
 type=auth
 auth_type=userpass
-#username=${SERVER_EXTERNAL_USER}@${SERVER_EXTERNAL_HOST}
-username=${SERVER_EXTERNAL_USER}
+username=${SERVER_EXTERNAL_USER}@${SERVER_EXTERNAL_HOST}
 password=${SERVER_EXTERNAL_PASSWORD}
 realm=asterisk
 
@@ -1719,8 +1718,7 @@ password=${SERVER_EXTERNAL_PASSWORD}
 type=registration
 outbound_auth=server_external_auth
 server_uri=sip:${SERVER_EXTERNAL_HOST}
-#client_uri=sip:${SERVER_EXTERNAL_USER}@${SERVER_EXTERNAL_HOST}
-client_uri=sip:${SERVER_EXTERNAL_USER}
+client_uri=sip:${SERVER_EXTERNAL_USER}@${SERVER_EXTERNAL_HOST}
 retry_interval=60
 transport=transport-udp
 
