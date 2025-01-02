@@ -7,6 +7,7 @@ services:
     ports:
       - "${PORT_UDP:-5060}:5060/udp"
       - "${PORT_TCP:-5061}:5061"
+      - "${PORT_API:-8088}:8088"
       - "${PORT_RTC:-10000-10199}:10000-10199/udp"
     volumes:
       - ./logs:/var/log/asterisk

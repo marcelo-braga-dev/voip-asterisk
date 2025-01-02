@@ -1,3 +1,4 @@
 .env
 logs/*
 storage/*
+asterisk-config/pjsip.conf
